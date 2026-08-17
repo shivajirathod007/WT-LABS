@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity Bill Calculator</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero-card">
+        <div class="hero-copy">
+          <p class="eyebrow">WT-3 Assignment</p>
+          <h1>Electricity Bill Calculator</h1>
+          <p class="lead">
+            Enter the consumed units and calculate the bill using a Servlet with responsive UI.
+          </p>
+        </div>
+
+        <form class="bill-form" action="calculate" method="post">
+          <label>
+            Customer Name
+            <input type="text" name="customerName" placeholder="Enter customer name" />
+          </label>
+
+          <label>
+            Units Consumed
+            <input type="number" name="units" min="0" step="0.01" required placeholder="e.g. 180" />
+          </label>
+
+          <button type="submit">Calculate Bill</button>
+        </form>
+
+        <div class="slab-grid" aria-label="Billing slabs">
+          <article class="slab-card"><strong>0 - 50</strong><span>Rs. 3.50 / unit</span></article>
+          <article class="slab-card"><strong>51 - 150</strong><span>Rs. 4.00 / unit</span></article>
+          <article class="slab-card"><strong>151 - 250</strong><span>Rs. 5.20 / unit</span></article>
+          <article class="slab-card"><strong>Above 250</strong><span>Rs. 6.50 / unit</span></article>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
