@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>VIT Semester Result Entry</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="hero">
+        <h1>Enter Semester Result</h1>
+    </div>
+    <div class="card">
+        <form th:action="@{/submit}" method="post">
+            <label for="studentName">Student Name</label>
+            <input type="text" id="studentName" name="studentName" placeholder="John Doe" required />
+            <hr/>
+            <div class="subjects">
+                <!-- Ethical Hacking -->
+                <h3>Ethical Hacking</h3>
+                <label>MSE (30%)</label>
+                <input type="number" name="Ethical_Hacking_MSE" min="0" max="100" step="0.01" required />
+                <label>ESE (70%)</label>
+                <input type="number" name="Ethical_Hacking_ESE" min="0" max="100" step="0.01" required />
+                <!-- Computer Networks -->
+                <h3>Computer Networks</h3>
+                <label>MSE (30%)</label>
+                <input type="number" name="Computer_Networks_MSE" min="0" max="100" step="0.01" required />
+                <label>ESE (70%)</label>
+                <input type="number" name="Computer_Networks_ESE" min="0" max="100" step="0.01" required />
+                <!-- Design & Analysis of Algorithms -->
+                <h3>Design & Analysis of Algorithms</h3>
+                <label>MSE (30%)</label>
+                <input type="number" name="Design_&_Analysis_of_Algorithms_MSE" min="0" max="100" step="0.01" required />
+                <label>ESE (70%)</label>
+                <input type="number" name="Design_&_Analysis_of_Algorithms_ESE" min="0" max="100" step="0.01" required />
+                <!-- Web Technology -->
+                <h3>Web Technology</h3>
+                <label>MSE (30%)</label>
+                <input type="number" name="Web_Technology_MSE" min="0" max="100" step="0.01" required />
+                <label>ESE (70%)</label>
+                <input type="number" name="Web_Technology_ESE" min="0" max="100" step="0.01" required />
+            </div>
+            <button type="submit" class="btn-primary">Calculate Result</button>
+        </form>
+    </div>
+</body>
+</html>

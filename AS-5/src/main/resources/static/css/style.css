@@ -1,0 +1,95 @@
+/* Modern premium styling */
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+    background-attachment: fixed;
+}
+
+h1, h3 {
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.hero {
+    width: 100%;
+    text-align: center;
+    padding: 2rem 0;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 800px;
+    width: 90%;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    animation: fadeIn 0.6s ease-out;
+}
+
+form label {
+    display: block;
+    margin-top: 0.8rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+form input {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.3rem;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 1rem;
+    transition: background 0.3s, transform 0.2s;
+}
+
+form input:focus {
+    outline: none;
+    background: rgba(255,255,255,0.3);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 0.8rem;
+    background: #ff6f61;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover {
+    background: #ff8a75;
+    transform: translateY(-2px);
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.2);
+    margin: 1.5rem 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

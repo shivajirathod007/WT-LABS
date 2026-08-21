@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result – VIT Semester</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="hero">
+        <h1 th:text="${student.studentName + ' – Semester Result'}"></h1>
+    </div>
+    <div class="card">
+        <h3>Total Score: <span th:text="${#numbers.formatDecimal(student.totalScore, 1, 2)}"></span></h3>
+        <hr/>
+        <table style="width:100%; border-collapse:collapse;">
+            <thead>
+                <tr style="border-bottom:1px solid rgba(255,255,255,0.2);">
+                    <th style="text-align:left; padding:0.5rem;">Subject</th>
+                    <th style="text-align:left; padding:0.5rem;">MSE (30 %)</th>
+                    <th style="text-align:left; padding:0.5rem;">ESE (70 %)</th>
+                    <th style="text-align:left; padding:0.5rem;">Weighted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="entry : ${student.marks.entrySet()}" style="border-bottom:1px solid rgba(255,255,255,0.1);">
+                    <td th:text="${entry.key}" style="padding:0.5rem;"></td>
+                    <td th:text="${#numbers.formatDecimal(entry.value[0], 1, 2)}" style="padding:0.5rem;"></td>
+                    <td th:text="${#numbers.formatDecimal(entry.value[1], 1, 2)}" style="padding:0.5rem;"></td>
+                    <td th:text="${#numbers.formatDecimal(entry.value[0]*0.30 + entry.value[1]*0.70, 1, 2)}" style="padding:0.5rem;"></td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="/" class="btn-primary" style="margin-top:1.5rem; display:inline-block;">Enter another result</a>
+    </div>
+</body>
+</html>
